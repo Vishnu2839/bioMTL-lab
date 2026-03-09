@@ -120,7 +120,7 @@ class BioMTLTrainer:
         self.training_history = []
         best_val_loss = float('inf')
         patience_counter = 0
-        patience = 20
+        patience = 7
 
         self.model.train()
         for epoch in range(epochs):
@@ -262,7 +262,7 @@ class BioMTLTrainer:
             y_tr, y_te = data['heart']['y_train'], data['heart']['y_test']
             
             # Logistic Regression
-            lr_h = LogisticRegression(max_iter=1000, random_state=42)
+            lr_h = LogisticRegression(max_iter=200, random_state=42)
             lr_h.fit(X_tr, y_tr)
             lr_h_pred = lr_h.predict_proba(X_te)[:, 1]
             comparison["lr_heart"] = {
@@ -273,7 +273,7 @@ class BioMTLTrainer:
             }
 
             # Random Forest
-            rf_h = RandomForestClassifier(n_estimators=100, random_state=42)
+            rf_h = RandomForestClassifier(n_estimators=20, random_state=42)
             rf_h.fit(X_tr, y_tr)
             rf_h_pred = rf_h.predict_proba(X_te)[:, 1]
             comparison["rf_heart"] = {
@@ -287,7 +287,7 @@ class BioMTLTrainer:
             X_tr, X_te = data['cancer']['X_train'], data['cancer']['X_test']
             y_tr, y_te = data['cancer']['y_train'], data['cancer']['y_test']
 
-            lr_c = LogisticRegression(max_iter=1000, random_state=42)
+            lr_c = LogisticRegression(max_iter=200, random_state=42)
             lr_c.fit(X_tr, y_tr)
             lr_c_pred = lr_c.predict_proba(X_te)[:, 1]
             comparison["lr_cancer"] = {
@@ -297,7 +297,7 @@ class BioMTLTrainer:
                 "accuracy": round(float(accuracy_score(y_te, (lr_c_pred > 0.5).astype(int))), 4),
             }
 
-            rf_c = RandomForestClassifier(n_estimators=100, random_state=42)
+            rf_c = RandomForestClassifier(n_estimators=20, random_state=42)
             rf_c.fit(X_tr, y_tr)
             rf_c_pred = rf_c.predict_proba(X_te)[:, 1]
             comparison["rf_cancer"] = {
@@ -339,7 +339,7 @@ class BioMTLTrainer:
         )
 
         model.train()
-        for epoch in range(50):
+        for epoch in range(15):
             for X_b, y_b in heart_loader:
                 optimizer.zero_grad()
                 pred = model(X_b, task='heart').squeeze()

@@ -21,8 +21,8 @@ class BioFactorizer:
         self.nmf = NMF(
             n_components=n_components,
             random_state=random_state,
-            max_iter=500,
-            init='nndsvda'
+            max_iter=200,
+            init='random'
         )
         self.n_heart = None
         self.d_max = None
