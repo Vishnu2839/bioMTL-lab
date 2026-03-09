@@ -294,7 +294,11 @@ export default function ResultsTab() {
           <h2 style={{ color: 'var(--ivory)', marginBottom: 32 }}>Latent Factor <span style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Network</span></h2>
 
           <div style={{ height: 400, borderRadius: 18, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.07)' }}>
-            <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+            <Canvas 
+              camera={{ position: [0, 0, 5], fov: 50 }}
+              dpr={[1, 1.5]}
+              gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+            >
               <ambientLight intensity={0.3} />
               <pointLight position={[5, 5, 5]} intensity={0.6} color="#c9963a" />
               <pointLight position={[-5, -3, 2]} intensity={0.3} color="#1a7070" />
