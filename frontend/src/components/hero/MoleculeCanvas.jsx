@@ -8,8 +8,10 @@ function CanvasCleanup() {
   useEffect(() => {
     return () => {
       if (gl && typeof gl.forceContextLoss === 'function') {
-        gl.forceContextLoss();
-        gl.dispose();
+        // Prevent 'context already lost' warning if browser already trashed it
+        const ext = gl.getExtension('WEBGL_lose_context');
+        if (ext) ext.loseContext();
+        else gl.forceContextLoss();
       }
     };
   }, [gl]);
