@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: biomtl-backend
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install --no-cache-dir torch==2.1.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.0
