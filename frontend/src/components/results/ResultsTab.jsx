@@ -1,9 +1,22 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, TrendingUp, Target, Award, Sparkles } from 'lucide-react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Float, OrbitControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
+
+function CanvasCleanup() {
+  const gl = useThree((state) => state.gl);
+  useEffect(() => {
+    return () => {
+      if (gl && typeof gl.forceContextLoss === 'function') {
+        gl.forceContextLoss();
+        gl.dispose();
+      }
+    };
+  }, [gl]);
+  return null;
+}
 import { useApi } from '../../hooks/useApi';
 import useAppStore from '../../store/appStore';
 import { containerVariants, itemVariants } from '../../utils/animations';
@@ -304,6 +317,7 @@ export default function ResultsTab() {
               <pointLight position={[-5, -3, 2]} intensity={0.3} color="#1a7070" />
               <FactorNetwork data={factData || r.factorization || { factors: Array.from({ length: 10 }, (_, i) => ({ id: i, type: i < 6 ? 'shared' : 'specific' })) }} />
               <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.3} />
+              <CanvasCleanup />
             </Canvas>
           </div>
 
