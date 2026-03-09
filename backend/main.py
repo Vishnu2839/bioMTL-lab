@@ -25,6 +25,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:3000",
         "https://biomtl-lab.vercel.app",
+        "https://bio-mtl-lab.vercel.app",
         "https://*.vercel.app",
         "*"
     ],
