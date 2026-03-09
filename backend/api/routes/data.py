@@ -9,7 +9,7 @@ import pandas as pd
 router = APIRouter(prefix="/api", tags=["data"])
 
 
-@router.post("/upload/heart/")
+@router.post("/upload/heart")
 async def upload_heart(file: UploadFile = File(...)):
     """Upload heart disease CSV."""
     content = await file.read()
@@ -21,7 +21,7 @@ async def upload_heart(file: UploadFile = File(...)):
     return result
 
 
-@router.post("/upload/cancer/")
+@router.post("/upload/cancer")
 async def upload_cancer(file: UploadFile = File(...)):
     """Upload breast cancer CSV."""
     content = await file.read()
@@ -32,7 +32,7 @@ async def upload_cancer(file: UploadFile = File(...)):
     return result
 
 
-@router.post("/upload/auto/")
+@router.post("/upload/auto")
 async def upload_auto(file: UploadFile = File(...)):
     """Upload any biomedical CSV — auto-detect type."""
     content = await file.read()
