@@ -9,11 +9,11 @@ function CanvasCleanup() {
   const gl = useThree((state) => state.gl);
   useEffect(() => {
     return () => {
-      if (gl && typeof gl.forceContextLoss === 'function') {
-        // Prevent 'context already lost' warning
-        const ext = gl.getExtension('WEBGL_lose_context');
+      if (gl) {
+        const ctx = gl.getContext();
+        const ext = ctx?.getExtension('WEBGL_lose_context');
         if (ext) ext.loseContext();
-        else gl.forceContextLoss();
+        gl.dispose();
       }
     };
   }, [gl]);
