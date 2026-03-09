@@ -488,7 +488,7 @@ npm install
 
 ## 👨‍💻 Author
 
-**Vishnu** — Major Project
+**Vishnu** — Minor Project
 
 ---
 
