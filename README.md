@@ -5,7 +5,7 @@
 **Biomedical Multi-Task Learning Platform**
 
 <p>
-  A full-stack research-grade web application that simultaneously predicts <b>Heart Attack Risk</b> and <b>Breast Cancer Malignancy</b>.<br/>
+  A fu neell-stack research-grade web application that simultaneously predicts <b>Heart Attack Risk</b> and <b>Breast Cancer Malignancy</b>.<br/>
   Powered by a <b>Multi-Task Learning (MTL)</b> model and <b>Non-Negative Matrix Factorization (NMF)</b>.
 </p>
 
