@@ -18,7 +18,7 @@ function App() {
   const toasts = useAppStore((s) => s.toasts);
 
   useEffect(() => {
-    // Wake up Render backend (free tier sleeps after 15 min)
+   
     fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/health`)
       .then(r => r.json())
       .then(() => console.log('✅ Backend is awake'))
