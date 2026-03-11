@@ -18,7 +18,7 @@ function App() {
   const toasts = useAppStore((s) => s.toasts);
 
   useEffect(() => {
-   //wake up render 
+   //wake up render where frontend wakes backend through api
     fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/health`)
       .then(r => r.json())
       .then(() => console.log('✅ Backend is awake'))
