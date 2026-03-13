@@ -20,7 +20,7 @@ CANCER_COLUMNS = ['mean_radius', 'mean_texture', 'mean_perimeter', 'mean_area',
                   'worst_smoothness', 'worst_compactness', 'worst_concavity',
                   'worst_concave_points', 'worst_symmetry', 'worst_fractal_dimension']
 
-# Column mapping for variant CSV formats
+
 COLUMN_ALIASES = {
     'age_years': 'age', 'blood_pressure': 'trestbps', 'resting_bp': 'trestbps',
     'cholesterol': 'chol', 'max_heart_rate': 'thalach', 'max_hr': 'thalach',
