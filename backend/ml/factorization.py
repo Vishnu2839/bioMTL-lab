@@ -49,23 +49,23 @@ class BioFactorizer:
         self.d_cancer = X_cancer.shape[1]
         self.d_max = max(self.d_heart, self.d_cancer)
 
-        # Pad to same dimension
+        
         X_heart_padded = np.zeros((X_heart.shape[0], self.d_max), dtype=np.float32)
         X_heart_padded[:, :self.d_heart] = X_heart
         
         X_cancer_padded = np.zeros((X_cancer.shape[0], self.d_max), dtype=np.float32)
         X_cancer_padded[:, :self.d_cancer] = X_cancer
 
-        # Ensure non-negative (clamp small negatives from floating point)
+        
         X_heart_padded = np.clip(X_heart_padded, 0, None)
         X_cancer_padded = np.clip(X_cancer_padded, 0, None)
 
-        # Stack and factorize
+        
         X_combined = np.vstack([X_heart_padded, X_cancer_padded])
         self.W = self.nmf.fit_transform(X_combined)
         self.H = self.nmf.components_
 
-        # Split back
+        
         W_heart = self.W[:self.n_heart, :]
         W_cancer = self.W[self.n_heart:, :]
 
