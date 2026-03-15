@@ -24,8 +24,6 @@
 
 </div>
 
-
-
 ## 🌟 The Vision
 
 BioMTL Lab addresses a critical challenge in biomedical research: **limited labeled data**. By jointly training on two related clinical datasets through shared latent factors, our MTL model achieves superior accuracy compared to single-task baselines.
