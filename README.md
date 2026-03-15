@@ -38,7 +38,6 @@ BioMTL Lab addresses a critical challenge in biomedical research: **limited labe
 4. **Knowledge Transfer** ⸺ Shared factors enable cross-task learning, boosting accuracy on small datasets.
 
 </details>
-
 <br/>
 
 ## 📊 Datasets at a Glance
@@ -105,7 +104,6 @@ flowchart TB
 - 📁 **Auto-Detect Upload** — Drop any CSV, system identifies heart vs cancer.
 - 🔮 **Single Patient Prediction** — Interactive sliders with animated risk gauge.
 - 📈 **Model Comparison** — BioMTL vs Logistic Regression vs Random Forest vs Vanilla MTL.
-- 🎨 **Luxury Editorial Design** — Playfair Display, gold/ivory palette, glassmorphism.
 
 ---
 
