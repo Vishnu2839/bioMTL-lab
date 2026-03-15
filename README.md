@@ -8,8 +8,6 @@
   A fu neell-stack research-grade web application that simultaneously predicts <b>Heart Attack Risk</b> and <b>Breast Cancer Malignancy</b>.<br/>
   Powered by a <b>Multi-Task Learning (MTL)</b> model and <b>Non-Negative Matrix Factorization (NMF)</b>.
 </p>
-
-
 <p>
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
