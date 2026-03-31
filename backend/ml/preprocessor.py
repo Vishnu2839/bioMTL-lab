@@ -63,7 +63,7 @@ def detect_dataset_type(columns: list) -> str:
     if 'chol' in col_str or 'thalach' in col_str:
         return 'heart'
     return 'unknown'
-
+#remove high resolution of websockets
 
 def map_columns(df: pd.DataFrame) -> pd.DataFrame:
     """Map variant column names to standard names."""
