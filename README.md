@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧬 BioMTL Lab
+# 🧬 BioMTL Lab 
 
 **Biomedical Multi-Task Learning Platform**
 
